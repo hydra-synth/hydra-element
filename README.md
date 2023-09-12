@@ -4,6 +4,8 @@
 
 A custom element for wrapping the [hydra-synth](https://github.com/ojack/hydra-synth) engine.
 
+Originally by [jdomizz](https://github.com/jdomizz), forked by [hydra-synth](https://github.com/hydra-synth/).
+
 [Hydra](https://github.com/ojack/hydra) is a set of tools for livecoding networked visuals developed by [Olivia Jack](https://ojack.xyz/).
 
 ## Rationale
@@ -13,6 +15,8 @@ The purpose of this project is to embed a _global_ instance of `hydra-synth` in 
 ## Usage
 
 ### In a web page
+
+**TODO: need publish npm and update usage**
 
 ```html
 <!DOCTYPE html>
@@ -65,6 +69,8 @@ Read the [`hydra-synth` documentation](https://github.com/ojack/hydra-synth#api)
 | `sources`                 | `numSources`         | `4`                  |
 | `outputs`                 | `numOutputs`         | `4`                  |
 | `precision`               | `precision`          | `highp`              |
+
+(currently sources and outputs > 4 won't work because of scope handling)
 
 ## Development
 
