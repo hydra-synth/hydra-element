@@ -96,6 +96,7 @@ export class HydraElement extends HTMLElement {
       numSources: this.sources,
       numOutputs: this.outputs,
       precision: this.precision,
+      makeGlobal: false,
     };
   }
 
@@ -127,7 +128,42 @@ export class HydraElement extends HTMLElement {
         canvas: this.canvas,
         ...this.options,
       });
-      this.hydra.eval(this.innerHTML);
+      const hydraEval = ({
+        time,
+        bpm,
+        width,
+        height,
+        fps,
+        stats,
+        speed,
+        mouse,
+        render,
+        setResolution,
+        update,
+        hush,
+        o0,
+        o1,
+        o2,
+        o3,
+        s0,
+        s1,
+        s2,
+        s3,
+        noise,
+        voronoi,
+        osc,
+        shape,
+        gradient,
+        src,
+        solid,
+        prev,
+        setFunction,
+        screencap,
+        vidRecorder
+      }, code) => {
+        eval(code);
+      };
+      hydraEval(this.hydra.synth, this.innerHTML);
     }
   }
 }

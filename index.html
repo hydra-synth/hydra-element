@@ -27,13 +27,23 @@
       color: white;
       font-family:'Courier New'
     }
+    .small {
+      position: relative;
+      display: block;
+      width: 20%;
+      height: 20%;
+    }
   </style>
 </head>
 <body>
   <div id="foreground">&lt;/&gt;</div>
-  <hydra-element audio="true" precision="lowp" class="background">
+  <hydra-element audio="false" precision="lowp" class="background">
     gradient(0.5).colorama(0.5).pixelate(20,20).out(o0);
   </hydra-element>
-  <script type="module" src="./dist/hydra-element.js"></script>
+  <hydra-element audio="false" precision="lowp" class="small">
+    src(o0).modulate(gradient().pixelate(2,2).brightness(-.5),-0.1).layer(
+    osc(30,0.1,1.5).mask(shape(4,0.8,0))).out(o0);
+  </hydra-element>
+  <script type="module" src="./hydra-element.js"></script>
 </body>
 </html>
