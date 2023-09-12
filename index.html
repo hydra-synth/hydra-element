@@ -28,15 +28,12 @@
       font-family:'Courier New'
     }
   </style>
-  <script>
-    window.addEventListener('load', function() {
-      gradient(0.5).colorama(0.5).pixelate(20,20).out(o0);
-    });
-  </script>
 </head>
 <body>
   <div id="foreground">&lt;/&gt;</div>
-  <hydra-element audio="true" precision="lowp" class="background"></hydra-element>
+  <hydra-element audio="true" precision="lowp" class="background">
+    gradient(0.5).colorama(0.5).pixelate(20,20).out(o0);
+  </hydra-element>
   <script type="module" src="./dist/hydra-element.js"></script>
 </body>
 </html>

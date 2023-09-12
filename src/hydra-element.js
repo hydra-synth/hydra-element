@@ -61,7 +61,7 @@ export class HydraElement extends HTMLElement {
 
   connectedCallback() {
     this.shadowRoot.appendChild(this.canvas);
-    this.initHydraSynth();
+    this.initHydraSynth({});
   }
 
   attributeChangedCallback(attrName, oldValue, newValue) {
@@ -127,6 +127,7 @@ export class HydraElement extends HTMLElement {
         canvas: this.canvas,
         ...this.options,
       });
+      this.hydra.eval(this.innerHTML);
     }
   }
 }
